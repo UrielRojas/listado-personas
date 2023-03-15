@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Person } from './person.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'listado-personas';
+  title = 'List of person';
+  persons: Person[] = [
+  new Person('Uriel', 'Rojas'), 
+  new Person('Abdiel', 'Rojas'), 
+  new Person('Yeudiel', 'Rojas')
+];
+
+personAdded(person:Person){
+  this.persons.push(person);
+}
+ 
 }
