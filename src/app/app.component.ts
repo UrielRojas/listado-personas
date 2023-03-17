@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoggingService } from './LoggingService.service';
 import { Person } from './person.model';
 
 @Component({
@@ -14,7 +15,10 @@ export class AppComponent {
   new Person('Yeudiel', 'Rojas')
 ];
 
+constructor(private loggingService: LoggingService){}
+
 personAdded(person:Person){
+  this.loggingService.SendMessageToConsole("New Person added "+person.name);
   this.persons.push(person);
 }
  

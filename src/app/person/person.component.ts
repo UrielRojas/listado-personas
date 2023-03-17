@@ -9,4 +9,6 @@ import { Person } from '../person.model';
 export class PersonComponent {
   @Input() person: Person;
   @Input() index: number;
+  
+
 }
